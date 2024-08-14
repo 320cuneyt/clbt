@@ -1,5 +1,4 @@
-# copyright 2023 © Xron Trix | https://github.com/Xrontrix10
-
+#
 
 from time import time
 from datetime import datetime
