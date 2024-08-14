@@ -100,7 +100,7 @@ async def Leech(folder_path: str, remove: bool):
             os.rename(file_path, new_path)
             BotTimes.current_time = time()
             Messages.status_head = (
-                f"<b>📤 UPLOADING » </b>\n\n<code>{file_name}</code>\n"
+                f"<b>📤 YÜKLENİYOR » </b>\n\n<code>{file_name}</code>\n"
             )
             try:
                 MSG.status_msg = await MSG.status_msg.edit_text(
