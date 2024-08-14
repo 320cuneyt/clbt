@@ -1,5 +1,4 @@
-# Some codes and idea were taken from https://github.com/Itz-fork/Mega.nz-Bot/tree/nightly | Thanks to  https://github.com/Itz-fork
-# So, I can't take the entire credit for this module
+# 
 
 import subprocess, logging
 from datetime import datetime
