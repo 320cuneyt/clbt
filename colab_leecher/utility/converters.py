@@ -39,9 +39,9 @@ async def videoConverter(file: str):
     async def msg_updater(c: int, tr, engine: str):
         global Messages
         messg = f"╭「" + "░" * c + "█" + "░" * (11 - c) + "」"
-        messg += f"\n├⏳ **Status »** __Running 🏃🏼‍♂️__\n├🕹 **Attempt »** __{tr}__"
-        messg += f"\n├⚙️ **Engine »** __{engine}__\n├💪🏼 **Handler »** __{core}__"
-        messg += f"\n╰🍃 **Time Spent »** __{getTime((datetime.now() - BotTimes.start_time).seconds)}__"
+        messg += f"\n├⏳ **Durum »** __Running 🏃🏼‍♂️__\n├🕹 **Attempt »** __{tr}__"
+        messg += f"\n├⚙️ **Motor »** __{engine}__\n├💪🏼 **Handler »** __{core}__"
+        messg += f"\n╰🍃 **Geçen süre »** __{getTime((datetime.now() - BotTimes.start_time).seconds)}__"
         try:
             await MSG.status_msg.edit_text(
                 text=Messages.task_msg + mtext + messg + sysINFO(),
@@ -148,7 +148,7 @@ async def archive(path, is_split, remove: bool):
         name = ospath.basename(path)
     else:
         name = Messages.download_name
-    Messages.status_head = f"<b>🔐 ZIPPING » </b>\n\n<code>{name}</code>\n"
+    Messages.status_head = f"<b>🔐 ARŞİVLENİYOR » </b>\n\n<code>{name}</code>\n"
     Messages.download_name = f"{name}.zip"
     BotTimes.task_start = datetime.now()
 
@@ -183,7 +183,7 @@ async def archive(path, is_split, remove: bool):
 async def extract(zip_filepath, remove: bool):
     global BOT, Paths, Messages
     _, filename = ospath.split(zip_filepath)
-    Messages.status_head = f"<b>📂 EXTRACTING »</b>\n\n<code>{filename}</code>\n"
+    Messages.status_head = f"<b>📂 ÇIKARTILIYOR »</b>\n\n<code>{filename}</code>\n"
     p = f"-p{BOT.Options.unzip_pswd}" if len(BOT.Options.unzip_pswd) != 0 else ""
     name, ext = ospath.splitext(filename)
     file_pattern, real_name, temp_unzip_path, total_ = (
@@ -251,7 +251,7 @@ async def splitArchive(file_path, max_size):
     global Paths, BOT, MSG, Messages
     _, filename = ospath.split(file_path)
     new_path = f"{Paths.temp_zpath}/{filename}"
-    Messages.status_head = f"<b>✂️ SPLITTING » </b>\n\n<code>{filename}</code>\n"
+    Messages.status_head = f"<b>✂️ KESİLİYOR » </b>\n\n<code>{filename}</code>\n"
     # Get the total size of the file
     total_size = ospath.getsize(file_path)
 
