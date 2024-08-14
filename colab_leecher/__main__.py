@@ -1,6 +1,3 @@
-# copyright 2024 © Xron Trix | https://github.com/Xrontrix10
-
-
 import logging, os
 from pyrogram import filters
 from datetime import datetime
@@ -27,7 +24,7 @@ async def start(client, message):
                     "Repository 🦄",
                     url="https://github.com/320cuneyt/clbt",
                 ),
-                InlineKeyboardButton("Support 💝", url="https://t.me/Colab_Leecher"),
+                InlineKeyboardButton("Support 💝", url="https://t.me"),
             ],
         ]
     )
