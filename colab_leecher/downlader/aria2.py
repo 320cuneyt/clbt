@@ -13,7 +13,7 @@ async def aria2_Download(link: str, num: int):
     global BotTimes, Messages
     name_d = get_Aria2c_Name(link)
     BotTimes.task_start = datetime.now()
-    Messages.status_head = f"<b>📥 DOWNLOADING FROM » </b><i>🔗Link {str(num).zfill(2)}</i>\n\n<b>🏷️ Name » </b><code>{name_d}</code>\n"
+    Messages.status_head = f"<b>📥 İNDİRME ŞEKLİ » </b><i>🔗Link {str(num).zfill(2)}</i>\n\n<b>🏷️ İsim » </b><code>{name_d}</code>\n"
 
     # Create a command to run aria2p with the link
     command = [
@@ -48,11 +48,11 @@ async def aria2_Download(link: str, num: int):
     error_output = proc.stderr.read()  # type: ignore
     if exit_code != 0:
         if exit_code == 3:
-            logging.error(f"The Resource was Not Found in {link}")
+            logging.error(f"Kaynak Bulunamadı {link}")
         elif exit_code == 9:
-            logging.error(f"Not enough disk space available")
+            logging.error(f"Yeterli disk alanı yok")
         elif exit_code == 24:
-            logging.error(f"HTTP authorization failed.")
+            logging.error(f"HTTP yetkilendirmesi başarısız oldu.")
         else:
             logging.error(
                 f"aria2c download failed with return code {exit_code} for {link}.\nError: {error_output}"
@@ -104,7 +104,7 @@ async def on_output(output: str):
     elapsed_time_seconds = (datetime.now() - BotTimes.task_start).seconds
 
     if elapsed_time_seconds >= 270 and not Aria2c.link_info:
-        logging.error("Failed to get download information ! Probably dead link 💀")
+        logging.error("İndirme bilgisi alınamadı! Muhtemelen ölü bağlantı 💀")
     # Only Do this if got Information
     if total_size != "0B":
         # Calculate download speed
