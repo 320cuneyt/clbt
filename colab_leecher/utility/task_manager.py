@@ -50,7 +50,7 @@ async def task_starter(message, text):
         return src_request_msg
     else:
         msg = await message.reply_text(
-            "I am already working ! Please wait until I finish !!"
+            "Ben zaten çalışıyorum! Lütfen bitirene kadar bekleyin!!"
         )
         await sleep(15)
         await msg.delete()
@@ -68,10 +68,10 @@ async def taskScheduler():
     )
     # Reset Texts
     Messages.download_name = ""
-    Messages.task_msg = f"<b>🦞 TASK MODE » </b>"
+    Messages.task_msg = f"<b>🦞 GÖREV MODU » </b>"
     Messages.dump_task = (
         Messages.task_msg
-        + f"<i>{BOT.Mode.type.capitalize()} {BOT.Mode.mode.capitalize()} as {BOT.Setting.stream_upload}</i>\n\n<b>🖇️ SOURCES » </b>"
+        + f"<i>{BOT.Mode.type.capitalize()} {BOT.Mode.mode.capitalize()} as {BOT.Setting.stream_upload}</i>\n\n<b>🖇️ KAYNAKLAR » </b>"
     )
     Transfer.sent_file = []
     Transfer.sent_file_names = []
@@ -79,12 +79,12 @@ async def taskScheduler():
     Transfer.up_bytes = [0, 0]
     Messages.download_name = ""
     Messages.task_msg = ""
-    Messages.status_head = f"<b>📥 DOWNLOADING » </b>\n"
+    Messages.status_head = f"<b>📥 İNDİRİLİYOR » </b>\n"
 
     if is_dir:
         if not ospath.exists(BOT.SOURCE[0]):
             TaskError.state = True
-            TaskError.text = "Task Failed. Because: Provided Directory Path Not Exists"
+            TaskError.text = "Görev Başarısız. Çünkü: Sağlanan Dizin Yolu Mevcut Değil"
             logging.error(TaskError.text)
             return
         if not ospath.exists(Paths.temp_dirleech_path):
@@ -119,7 +119,7 @@ async def taskScheduler():
     # Get the current date and time in the specified time zone
     cdt = datetime.now(pytz.timezone("Asia/Kolkata"))
     dt = cdt.strftime(" %d-%m-%Y")
-    Messages.dump_task += f"\n\n<b>📆 Task Date » </b><i>{dt}</i>"
+    Messages.dump_task += f"\n\n<b>📆 Görev Tarihi » </b><i>{dt}</i>"
 
     src_text.append(Messages.dump_task)
 
