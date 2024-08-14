@@ -16,15 +16,15 @@ src_request_msg = None
 @colab_bot.on_message(filters.command("start") & filters.private)
 async def start(client, message):
     await message.delete()
-    text = "**Colab dosya yükleyicisi**\n\n◲ Ben Güçlü Bir Dosya Yükleme Botuyum\n◲ Çeşitli Kaynaklardan Telegram'a veya Google Drive'ınıza Dosya Aktarabilirim"
+    text = "**Colab dosya yükleyicisi**\n\n Ben Güçlü Bir Dosya Yükleme Botuyum\n Çeşitli Kaynaklardan Telegram'a veya Google Drive'ınıza Dosya Aktarabilirim"
     keyboard = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    "Repository 🦄",
+                    "Depo",
                     url="https://github.com/320cuneyt/clbt",
                 ),
-                InlineKeyboardButton("Support 💝", url="https://t.me"),
+                InlineKeyboardButton("Destek", url="https://t.me"),
             ],
         ]
     )
