@@ -85,7 +85,7 @@ class Paths:
 
 
 class Messages:
-    caution_msg = "\n\n<i>💖 Dmalaya damlaya göl olur. ✨</i>"
+    caution_msg = "\n\n<i>💖 Damlaya damlaya göl olur. ✨</i>"
     download_name = ""
     task_msg = ""
     status_head = f"<b>📥 DOWNLOADING » </b>\n"
