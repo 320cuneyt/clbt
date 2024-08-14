@@ -130,10 +130,10 @@ async def handle_url(client, message):
         BOT.SOURCE = temp_source
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("Regular", callback_data="normal")],
+                [InlineKeyboardButton("Normal", callback_data="normal")],
                 [
-                    InlineKeyboardButton("Compress", callback_data="zip"),
-                    InlineKeyboardButton("Extract", callback_data="unzip"),
+                    InlineKeyboardButton("Arşivle", callback_data="zip"),
+                    InlineKeyboardButton("Çıkart", callback_data="unzip"),
                 ],
                 [InlineKeyboardButton("UnDoubleZip", callback_data="undzip")],
             ]
