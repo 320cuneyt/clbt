@@ -13,7 +13,7 @@ async def aria2_Download(link: str, num: int):
     global BotTimes, Messages
     name_d = get_Aria2c_Name(link)
     BotTimes.task_start = datetime.now()
-    Messages.status_head = f"<b>📥 İNDİRME ŞEKLİ » </b><i>🔗Link {str(num).zfill(2)}</i>\n\n<b>🏷️ İsim » </b><code>{name_d}</code>\n"
+    Messages.status_head = f"<b>📥 İNDİRİLİYOR » </b><i>🔗Link {str(num).zfill(2)}</i>\n\n<b>🏷️ İsim » </b><code>{name_d}</code>\n"
 
     # Create a command to run aria2p with the link
     command = [
