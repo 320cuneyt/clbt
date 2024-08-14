@@ -37,7 +37,7 @@ async def telegram_upload(client, message):
     BOT.Mode.mode = "leech"
     BOT.Mode.ytdl = False
 
-    text = "<b>⚡ Send Me DOWNLOAD LINK(s) 🔗»</b>\n\n🦀 Follow the below pattern\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
+    text = "<b>⚡ İNDİRME LİNKİ GÖNDER 🔗»</b>\n\n🦀 Follow the below pattern\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
 
     src_request_msg = await task_starter(message, text)
 
@@ -48,7 +48,7 @@ async def drive_upload(client, message):
     BOT.Mode.mode = "mirror"
     BOT.Mode.ytdl = False
 
-    text = "<b>⚡ Send Me DOWNLOAD LINK(s) 🔗»</b>\n\n🦀 Follow the below pattern\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
+    text = "<b>⚡ İNDİRME LİNKİ GÖNDER 🔗»</b>\n\n🦀 Follow the below pattern\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
 
     src_request_msg = await task_starter(message, text)
 
@@ -425,11 +425,11 @@ async def help_command(client, message):
                 [
                     InlineKeyboardButton(  # Opens a web URL
                         "Channel 📣",
-                        url="https://t.me/Colab_Leecher",
+                        url="https://t.me",
                     ),
                     InlineKeyboardButton(  # Opens a web URL
                         "Group 💬",
-                        url="https://t.me/Colab_Leecher_Discuss",
+                        url="https://t.me",
                     ),
                 ],
             ]
