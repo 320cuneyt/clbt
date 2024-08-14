@@ -231,10 +231,10 @@ def sysINFO():
     disk_usage = psutil.disk_usage("/")
     cpu_usage_percent = psutil.cpu_percent()
 
-    string = "\n\n⌬─────「 Colab Usage 」─────⌬\n"
-    string += f"\n╭🖥️ **CPU Usage »**  __{cpu_usage_percent}%__"
-    string += f"\n├💽 **RAM Usage »**  __{sizeUnit(ram_usage)}__"
-    string += f"\n╰💾 **DISK Free »**  __{sizeUnit(disk_usage.free)}__"
+    string = "\n\n⌬─────「 Colab Kullanımı 」─────⌬\n"
+    string += f"\n╭🖥️ **CPU Kullanımı »**  __{cpu_usage_percent}%__"
+    string += f"\n├💽 **RAM Kullanımı »**  __{sizeUnit(ram_usage)}__"
+    string += f"\n╰💾 **Boş Disk »**  __{sizeUnit(disk_usage.free)}__"
     string += Messages.caution_msg
 
     return string
@@ -381,10 +381,10 @@ async def status_bar(down_msg, speed, percentage, eta, done, left, engine):
     filled_length = int(percentage / 100 * bar_length)
     bar = "█" * filled_length + "░" * (bar_length - filled_length)
     text = (
-        f"\n╭「{bar}」 **»** __{percentage:.2f}%__\n├⚡️ **Speed »** __{speed}__\n├⚙️ **Engine »** __{engine}__"
-        + f"\n├⏳ **Time Left »** __{eta}__"
-        + f"\n├🍃 **Time Spent »** __{getTime((datetime.now() - BotTimes.start_time).seconds)}__"
-        + f"\n├✅ **Processed »** __{done}__\n╰📦 **Total Size »** __{left}__"
+        f"\n╭「{bar}」 **»** __{percentage:.2f}%__\n├⚡️ **Hız »** __{speed}__\n├⚙️ **Motor »** __{engine}__"
+        + f"\n├⏳ **Kalan Zaman »** __{eta}__"
+        + f"\n├🍃 **Harcanan Zaman »** __{getTime((datetime.now() - BotTimes.start_time).seconds)}__"
+        + f"\n├✅ **İşlendi »** __{done}__\n╰📦 **Toplam Boyut »** __{left}__"
     )
     try:
         # Edit the message with updated progress information.
