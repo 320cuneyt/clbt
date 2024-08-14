@@ -135,7 +135,7 @@ async def Zip_Handler(down_path: str, is_split: bool, remove: bool):
     global BOT, Messages, MSG, Transfer
 
     Messages.status_head = (
-        f"<b>🔐 ZIPPING » </b>\n\n<code>{Messages.download_name}</code>\n"
+        f"<b>🔐 Arşivleniyor » </b>\n\n<code>{Messages.download_name}</code>\n"
     )
 
     try:
@@ -164,7 +164,7 @@ async def Unzip_Handler(down_path: str, remove: bool):
     global MSG, Messages
 
     Messages.status_head = (
-        f"\n<b>📂 EXTRACTING » </b>\n\n<code>{Messages.download_name}</code>\n"
+        f"\n<b>📂 ÇIKARTILIYOR » </b>\n\n<code>{Messages.download_name}</code>\n"
     )
 
     MSG.status_msg = await MSG.status_msg.edit_text(
@@ -229,12 +229,12 @@ async def cancelTask(Reason: str):
 
 async def SendLogs(is_leech: bool):
     global Transfer, Messages
-    final_text = f"<b>☘️ File Count:</b>  <code>{len(Transfer.sent_file)}</code>\n\n<b>📜 Logs:</b>\n"
-    l_ink = "⌬─────[「 Colab Usage 」](https://colab.research.google.com/drive/12hdEqaidRZ8krqj7rpnyDzg1dkKmvdvp)─────⌬"
+    final_text = f"<b>☘️ Dosya Sayısı:</b>  <code>{len(Transfer.sent_file)}</code>\n\n<b>📜 Logs:</b>\n"
+    l_ink = "⌬─────[「 Colab kullanımı 」](https://colab.research.google.com/drive/12hdEqaidRZ8krqj7rpnyDzg1dkKmvdvp)─────⌬"
 
     if is_leech:
         file_count = (
-            f"├<b>☘️ File Count » </b><code>{len(Transfer.sent_file)} Files</code>\n"
+            f"├<b>☘️ Dosya Sayısı » </b><code>{len(Transfer.sent_file)} Files</code>\n"
         )
     else:
         file_count = ""
@@ -247,10 +247,10 @@ async def SendLogs(is_leech: bool):
 
     last_text = (
         f"\n\n<b>#{(BOT.Mode.mode).upper()}_COMPLETE 🔥</b>\n\n"
-        + f"╭<b>📛 Name » </b><code>{Messages.download_name}</code>\n"
-        + f"├<b>📦 Size » </b><code>{size}</code>\n"
+        + f"╭<b>📛 İsim » </b><code>{Messages.download_name}</code>\n"
+        + f"├<b>📦 Boyut » </b><code>{size}</code>\n"
         + file_count
-        + f"╰<b>🍃 Saved Time »</b> <code>{getTime((datetime.now() - BotTimes.start_time).seconds)}</code>"
+        + f"╰<b>🍃 Geçen süre »</b> <code>{getTime((datetime.now() - BotTimes.start_time).seconds)}</code>"
     )
 
     if BOT.State.task_going:
