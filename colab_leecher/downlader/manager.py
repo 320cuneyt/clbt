@@ -81,7 +81,7 @@ async def downloadManager(source, is_ytdl: bool):
                     # await loop.run_in_executor(executor, megadl, link, i + 1)
                     await megadl(link, i + 1)
                 elif is_terabox(link):
-                    tera_dn = f"<b>PLEASE WAIT ⌛</b>\n\n__Generating Download Link For__\n\n<code>{link}</code>"
+                    tera_dn = f"<b>LÜTFEN BEKLEYİN ⌛</b>\n\n__Generating Download Link For__\n\n<code>{link}</code>"
                     try:
                         await MSG.status_msg.edit_text(
                             text=tera_dn + sysINFO(), reply_markup=keyboard()
@@ -91,7 +91,7 @@ async def downloadManager(source, is_ytdl: bool):
 
                     await terabox_download(link, i + 1)
                 else:
-                    aria2_dn = f"<b>PLEASE WAIT ⌛</b>\n\n__Getting Download Info For__\n\n<code>{link}</code>"
+                    aria2_dn = f"<b>LÜTFEN BEKLEYİN ⌛</b>\n\n__Getting Download Info For__\n\n<code>{link}</code>"
                     try:
                         await MSG.status_msg.edit_text(
                             text=aria2_dn + sysINFO(), reply_markup=keyboard()
