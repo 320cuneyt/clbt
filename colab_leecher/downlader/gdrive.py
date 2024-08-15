@@ -30,7 +30,7 @@ async def build_service():
 
 async def g_DownLoad(link, num):
     global start_time, down_msg
-    down_msg = f"<b>📥 DOWNLOADING FROM » </b><i>🔗Link {str(num).zfill(2)}</i>\n\n<b>🏷️ Name » </b><code>{Messages.download_name}</code>\n"
+    down_msg = f"<b>📥 İndiriliyor » </b><i>🔗Link {str(num).zfill(2)}</i>\n\n<b>🏷️ İsim » </b><code>{Messages.download_name}</code>\n"
     file_id = await getIDFromURL(link)
     meta = getFileMetadata(file_id)
 
