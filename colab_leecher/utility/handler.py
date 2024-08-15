@@ -75,7 +75,7 @@ async def Leech(folder_path: str, remove: bool):
                     MSG.status_msg = await MSG.status_msg.edit_text(
                         text=Messages.task_msg
                         + Messages.status_head
-                        + "\n⏳ __Starting.....__"
+                        + "\n⏳ __Başlıyor.....__"
                         + sysINFO(),
                         reply_markup=keyboard(),
                     )
@@ -106,7 +106,7 @@ async def Leech(folder_path: str, remove: bool):
                 MSG.status_msg = await MSG.status_msg.edit_text(
                     text=Messages.task_msg
                     + Messages.status_head
-                    + "\n⏳ __Starting.....__"
+                    + "\n⏳ __Başlıyor.....__"
                     + sysINFO(),
                     reply_markup=keyboard(),
                 )
@@ -170,7 +170,7 @@ async def Unzip_Handler(down_path: str, remove: bool):
     MSG.status_msg = await MSG.status_msg.edit_text(
         text=Messages.task_msg
         + Messages.status_head
-        + "\n⏳ __Starting.....__"
+        + "\n⏳ __Başlıyor.....__"
         + sysINFO(),
         reply_markup=keyboard(),
     )
@@ -229,12 +229,12 @@ async def cancelTask(Reason: str):
 
 async def SendLogs(is_leech: bool):
     global Transfer, Messages
-    final_text = f"<b>☘️ Dosya Sayısı:</b>  <code>{len(Transfer.sent_file)}</code>\n\n<b>📜 Logs:</b>\n"
+    final_text = f"<b>☘️ Dosya Sayısı:</b>  <code>{len(Transfer.sent_file)}</code>\n\n<b>📜 Günlükler:</b>\n"
     l_ink = "⌬─────[「 Colab kullanımı 」](https://colab.research.google.com/drive/12hdEqaidRZ8krqj7rpnyDzg1dkKmvdvp)─────⌬"
 
     if is_leech:
         file_count = (
-            f"├<b>☘️ Dosya Sayısı » </b><code>{len(Transfer.sent_file)} Files</code>\n"
+            f"├<b>☘️ Dosya Sayısı » </b><code>{len(Transfer.sent_file)} Dosya</code>\n"
         )
     else:
         file_count = ""
@@ -263,17 +263,17 @@ async def SendLogs(is_leech: bool):
                 [
                     [
                         InlineKeyboardButton(
-                            "Git Repo 🪲",
-                            url="https://github.com/320cuneyt/clbt",
+                            "Git Depo 🪲",
+                            url="https://github.com",
                         ),
                     ],
                     [
                         InlineKeyboardButton(  # Opens a web URL
-                            "Channel 📣",
+                            "Kanal 📣",
                             url="https://t.me",
                         ),
                         InlineKeyboardButton(  # Opens a web URL
-                            "Group 💬",
+                            "Grup 💬",
                             url="https://t.me",
                         ),
                     ],
