@@ -68,10 +68,10 @@ async def taskScheduler():
     )
     # Reset Texts
     Messages.download_name = ""
-    Messages.task_msg = f"<b>🦞 GÖREV MODU » </b>"
+    Messages.task_msg = f"<b>🦞 Yapılan İşlem » </b>"
     Messages.dump_task = (
         Messages.task_msg
-        + f"<i>{BOT.Mode.type.capitalize()} {BOT.Mode.mode.capitalize()} as {BOT.Setting.stream_upload}</i>\n\n<b>🖇️ KAYNAKLAR » </b>"
+        + f"<i>{BOT.Mode.type.capitalize()} {BOT.Mode.mode.capitalize()} as {BOT.Setting.stream_upload}</i>\n\n<b>🖇️ Linkler » </b>"
     )
     Transfer.sent_file = []
     Transfer.sent_file_names = []
@@ -153,7 +153,7 @@ async def taskScheduler():
         photo=img,
         caption=Messages.task_msg
         + Messages.status_head
-        + f"\n📝 __Starting DOWNLOAD...__"
+        + f"\n📝 __İndirme Başlatılıyor...__"
         + sysINFO(),
         reply_markup=keyboard(),
     )
