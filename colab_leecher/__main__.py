@@ -37,7 +37,7 @@ async def telegram_upload(client, message):
     BOT.Mode.mode = "leech"
     BOT.Mode.ytdl = False
 
-    text = "<b>⚡ İNDİRME LİNKİ GÖNDER 🔗»</b>\n\n🦀 Follow the below pattern\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
+    text = "<b>⚡ İNDİRME LİNKİ GÖNDER 🔗»</b>\n\n🦀 Aşağıdaki modeli takip edin\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
 
     src_request_msg = await task_starter(message, text)
 
@@ -48,7 +48,7 @@ async def drive_upload(client, message):
     BOT.Mode.mode = "mirror"
     BOT.Mode.ytdl = False
 
-    text = "<b>⚡ İNDİRME LİNKİ GÖNDER 🔗»</b>\n\n🦀 Follow the below pattern\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
+    text = "<b>⚡ İNDİRME LİNKİ GÖNDER 🔗»</b>\n\n🦀 Aşağıdaki modeli takip edin\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}\n(Password for unzip)</code>"
 
     src_request_msg = await task_starter(message, text)
 
@@ -59,7 +59,7 @@ async def directory_upload(client, message):
     BOT.Mode.mode = "dir-leech"
     BOT.Mode.ytdl = False
 
-    text = "<b>⚡ Send Me FOLDER PATH 🔗»</b>\n\n🦀 Below is an example\n\n<code>/home/user/Downloads/bot</code>"
+    text = "<b>⚡ Bana KLASÖR YOLUNU Gönder 🔗»</b>\n\n🦀 Aşağıda bir örnek bulunmaktadır\n\n<code>/home/user/Downloads/bot</code>"
 
     src_request_msg = await task_starter(message, text)
 
@@ -70,7 +70,7 @@ async def yt_upload(client, message):
     BOT.Mode.mode = "leech"
     BOT.Mode.ytdl = True
 
-    text = "<b>⚡ Send YTDL DOWNLOAD LINK(s) 🔗»</b>\n\n🦀 Follow the below pattern\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}</code>"
+    text = "<b>⚡ YTDL İNDİRME BAĞLANTILARINI gönder 🔗»</b>\n\n🦀 Aşağıdaki modeli takip edin\n\n<code>https//linktofile1.mp4\nhttps//linktofile2.mp4\n[Custom name space.mp4]\n{Password for zipping}</code>"
 
     src_request_msg = await task_starter(message, text)
 
@@ -139,14 +139,14 @@ async def handle_url(client, message):
             ]
         )
         await message.reply_text(
-            text=f"<b>🐹 Select Type of {BOT.Mode.mode.capitalize()} You Want » </b>\n\nRegular:<i> Normal file upload</i>\nCompress:<i> Zip file upload</i>\nExtract:<i> extract before upload</i>\nUnDoubleZip:<i> Unzip then compress</i>",
+            text=f"<b>🐹 Türünü Seçin {BOT.Mode.mode.capitalize()} Seçin » </b>\n\nNormal:<i> Normal dosya yükleme</i>\nArşivle:<i> Dosyayı arşivle ve yükle</i>\nÇıkart:<i> Arşivden çıkar ve yükle</i>\nUnDoubleZip:<i> Zip'i açın ve ardından sıkıştırın</i>",
             reply_markup=keyboard,
             quote=True,
         )
     elif BOT.State.started:
         await message.delete()
         await message.reply_text(
-            "<i>I am Already Working ! Please Wait Until I finish 😣!!</i>"
+            "<i>Zaten Çalışıyorum! Lütfen bitirene kadar bekleyin 😣!!</i>"
         )
 
 
@@ -163,10 +163,10 @@ async def handle_options(client, callback_query):
         )
         MSG.status_msg = await colab_bot.send_message(
             chat_id=OWNER,
-            text="#STARTING_TASK\n\n**Starting your task in a few Seconds...🦐**",
+            text="#STARTING_TASK\n\n**Birkaç Saniye İçinde Görevinize Başlayacak...🦐**",
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("Cancel ❌", callback_data="cancel")],
+                    [InlineKeyboardButton("İptal et ❌", callback_data="cancel")],
                 ]
             ),
         )
@@ -320,10 +320,10 @@ async def handle_options(client, callback_query):
         )
         MSG.status_msg = await colab_bot.send_message(
             chat_id=OWNER,
-            text="#STARTING_TASK\n\n**Starting your task in a few Seconds...🦐**",
+            text="#STARTING_TASK\n\n**Birkaç Saniye İçinde Görevinize Başlayacak...🦐**",
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("Cancel ❌", callback_data="cancel")],
+                    [InlineKeyboardButton("İptal et ❌", callback_data="cancel")],
                 ]
             ),
         )
@@ -337,7 +337,7 @@ async def handle_options(client, callback_query):
 
     # If user Wants to Stop The Task
     elif callback_query.data == "cancel":
-        await cancelTask("User Cancelled !")
+        await cancelTask("İptal Edildi !")
 
 
 @colab_bot.on_message(filters.photo & filters.private)
