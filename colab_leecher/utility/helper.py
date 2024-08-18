@@ -404,6 +404,6 @@ async def status_bar(down_msg, speed, percentage, eta, done, left, engine):
 def keyboard():
     return InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("Cancel ❌", callback_data="cancel")],
+            [InlineKeyboardButton("İptal et ❌", callback_data="cancel")],
         ]
     )
